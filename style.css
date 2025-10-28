@@ -1,0 +1,255 @@
+:root{
+    --bg:#ffffff;
+    --muted:#6b7280;
+    --accent:#1f5390; 
+    --accent-dark:#153b63;
+    --card:#f8fafc;
+    --radius:10px;
+    --max-width:1100px;
+    --container-pad:28px;
+    --shadow: 0 6px 18px rgba(11,35,61,0.06);
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:linear-gradient(#f7f9fb, #ffffff);
+    color:#0b1b2b;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+
+  .wrap{
+    max-width:var(--max-width);
+    margin:28px auto;
+    padding:0 var(--container-pad) 80px;
+  }
+
+  
+  .hero-strip{
+    height:64px;
+    background:linear-gradient(180deg,#08263f 0%, #0d3750 100%);
+    border-radius:8px;
+    margin:0 var(--container-pad);
+    box-shadow: 0 6px 20px rgba(7,24,38,0.18);
+  }
+
+  
+  .about{
+    display:grid;
+    grid-template-columns: 1fr 160px;
+    gap:24px;
+    align-items:start;
+    margin:40px 0 32px;
+  }
+  .about h2{
+    margin:0 0 12px;
+    font-size:28px;
+    font-weight:700;
+    letter-spacing: -0.2px;
+  }
+  .about p{
+    margin:0;
+    color:var(--muted);
+    max-width:780px;
+  }
+  
+  .about .icon{
+    justify-self:end;
+    align-self:center;
+    width:120px;height:120px;
+    background: radial-gradient(circle at 30% 20%, #2b7ccf 0%, #133a62 70%);
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:var(--shadow);
+  }
+  .about .icon svg{width:68px;height:68px;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.12));}
+
+ 
+  .section-title{
+    margin:28px 0 14px;
+    font-size:22px;
+    font-weight:700;
+  }
+
+  
+  .featured{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap:18px;
+    align-items:start;
+  }
+  .card{
+    background:var(--card);
+    border-radius:12px;
+    padding:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .card .thumb{
+    height:120px;
+    border-radius:10px;
+    background-size:cover;
+    background-position:center;
+    flex-shrink:0;
+  }
+  .card h4{
+    margin:0;font-size:16px;font-weight:600;
+  }
+  .card a.read{
+    color:var(--accent);
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+    margin-top:auto;
+  }
+
+  
+  .events-row{
+    display:grid;
+    grid-auto-flow:column;
+    gap:16px;
+    margin:18px 0 24px;
+    overflow:auto;
+    padding-bottom:6px;
+  }
+  .event{
+    min-width:220px;
+    background:white;
+    padding:18px;
+    border-radius:10px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(8,21,34,0.04);
+  }
+  .event .date{color:var(--accent);font-weight:700;margin-bottom:8px}
+  .event h5{margin:0 0 12px;font-size:15px}
+  .btn{
+    display:inline-block;
+    padding:8px 14px;
+    background:var(--accent);
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+    border:2px solid transparent;
+  }
+  .btn.secondary{
+    background:white;color:var(--accent);
+    border-color:var(--accent);
+  }
+
+ 
+  .main-grid{
+    display:grid;
+    grid-template-columns: 1fr 360px;
+    gap:28px;
+    margin-top:10px;
+  }
+
+ 
+  .resource-list{
+    background:transparent;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .resource{
+    background:white;
+    padding:14px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(8,21,34,0.04);
+  }
+  .resource .title{font-weight:600}
+  .resource .meta{color:var(--muted);font-size:13px}
+
+  
+  .side{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .person{
+    display:flex;
+    gap:14px;
+    align-items:center;
+  }
+  .person img{
+    width:64px;height:64px;border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 6px 14px rgba(11,35,61,0.12);
+  }
+  .person .info{line-height:1}
+  .person .info h4{margin:0;font-size:16px}
+  .person .info p{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+  .news-list{display:flex;flex-direction:column;gap:12px}
+  .news-item{
+    display:flex;gap:12px;align-items:center;background:white;padding:12px;border-radius:8px;
+    box-shadow:var(--shadow);border:1px solid rgba(8,21,34,0.04);
+  }
+  .news-item .n-thumb{width:72px;height:56px;border-radius:8px;background-size:cover;background-position:center;flex-shrink:0}
+  .news-item h5{margin:0;font-size:15px}
+
+
+  .voices-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+    gap:14px;
+    margin-top:28px;
+  }
+
+
+  @media (max-width:980px){
+    .about{grid-template-columns: 1fr 120px}
+    .main-grid{grid-template-columns: 1fr}
+    .side{order:2}
+  }
+  @media (max-width:560px){
+    .about{grid-template-columns:1fr}
+    .about .icon{justify-self:start}
+    .events-row{grid-auto-flow:row}
+  }
+
+ 
+  .muted{color:var(--muted)}
+  .gap-8{height:8px}
+  
+.modal-backdrop{
+position:fixed;inset:0;background:rgba(7,24,38,0.45);
+backdrop-filter:blur(4px);
+opacity:0;pointer-events:none;transition:opacity .18s ease;
+}
+.modal-backdrop.open{opacity:1;pointer-events:auto}
+.modal{
+position:fixed;inset:auto 0 0 0;margin:auto;max-width:740px;width:calc(100% - 32px);
+background:white;border-radius:14px;box-shadow:0 22px 48px rgba(8,21,34,0.28);
+transform:translateY(14px) scale(.98);opacity:.98;transition:transform .22s ease,opacity .22s ease;
+padding:20px;line-height:1.6;
+}
+.modal.open{transform:translateY(0) scale(1);opacity:1}
+.modal header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.modal h4{margin:0;font-size:18px}
+.modal .muted{font-size:13px}
+.modal .content{max-height:min(58vh,520px);overflow:auto;margin-top:8px}
+.modal .close{
+margin-left:auto;appearance:none;border:none;background:#f1f5f9;color:#0b1b2b;
+border-radius:8px;padding:6px 10px;font-weight:600;cursor:pointer;
+}
+.modal .close:focus{outline:2px solid var(--accent)}
+@media (max-width:560px){.modal{padding:16px}}
+@media (prefers-reduced-motion:reduce){
+.modal,.modal-backdrop{transition:none}
+}
