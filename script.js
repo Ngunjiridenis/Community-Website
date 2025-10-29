@@ -78,7 +78,8 @@ document.querySelectorAll('.btn').forEach(btn => {
       if (label.includes('Register')) {
         openRegistrationForm();
       } else if (label.includes('Tool')) {
-        window.open('https://example-tool.com', '_blank');
+        //window.open('https://example-tool.com', '_blank');
+        openModal('Tool Launch', '<p>will announce on tool launch soon.</p>');
       } else if (label.includes('Member Directory')) {
         openModal('Member Directory', `<p>Coming soon: searchable list of members.</p>`);
       }
@@ -100,7 +101,7 @@ document.querySelectorAll('.btn').forEach(btn => {
             <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=60"
                  alt="ToolAlits dashboard preview" 
                  style="border-radius:10px;max-width:100%;height:auto;box-shadow:0 6px 18px rgba(0,0,0,0.12)">
-            <a href="https://example-tool.com" target="_blank" class="btn">Launch Tool</a>
+            <a href="#" target="_blank" class="btn">Launch Tool</a>
           </div>
         `;
   
@@ -139,4 +140,19 @@ document.querySelectorAll('.btn').forEach(btn => {
       });
     }, 200);
   }
-  
+  const faders = document.querySelectorAll('.fade-in-up');
+const appearOptions = {
+  threshold: 0.15,
+  rootMargin: "0px 0px -50px 0px"
+};
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(el => {
+  appearOnScroll.observe(el);
+});
