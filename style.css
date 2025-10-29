@@ -253,3 +253,63 @@ border-radius:8px;padding:6px 10px;font-weight:600;cursor:pointer;
 @media (prefers-reduced-motion:reduce){
 .modal,.modal-backdrop{transition:none}
 }
+.featured .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.featured .card:hover,
+.featured .card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(11,35,61,0.12);
+}
+
+/* when hovering thumb image */
+.featured .card .thumb {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+.featured .card:hover .thumb,
+.featured .card:focus-within .thumb {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* ===== BUTTON HOVER EFFECT ===== */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+.btn:hover::after,
+.btn:focus::after {
+  width: 200%;
+  height: 200%;
+}
+.btn:hover,
+.btn:focus {
+  /* swap colours */
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+/* ===== SCROLL-IN ANIMATION ===== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
